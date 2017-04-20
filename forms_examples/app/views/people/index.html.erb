@@ -1,0 +1,16 @@
+
+<ul>
+  <% @people.each do |person| %>
+    <li><%= person.name %> <%= link_to 'Show', person_path(person) %>  <%= link_to 'Edit', edit_person_path(person) %></li>
+  <% end %>
+</ul>
+
+
+<%= form_tag({controller: "people", action: "index"}, method: "get") do %>
+  <%= label_tag :q, 'Nombre personaje' %> <br>
+  <%= text_field_tag :q, nil, placeholder: 'Busca tu personaje aca' %>
+  <%= submit_tag :buscar %>
+<% end %> <br>
+
+<%= link_to :back %> <br>
+<%= link_to 'Crear persona', new_person_path %>

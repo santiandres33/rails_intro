@@ -1,0 +1,9 @@
+<h1>Mi nombre es <%= @person.name %></h1>
+
+<h4>Estas son mis direcciones:</h4>
+
+<ul>
+  <% @person.addresses.each do |address| %>
+    <li><%= address.city %>,  <%=  address.street %></li>
+  <% end %>
+</ul>

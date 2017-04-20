@@ -1,0 +1,35 @@
+<h1>Hola crea una persona</h1>
+
+
+<h3>Con form tag</h3>
+<%= form_tag '/people' do %>
+  Name: <%= text_field(:person, :name) %>
+  Email: <%= text_field(:person, :email) %>
+  <%= submit_tag %>
+<% end %>
+
+<h3>Con form_for</h3>
+<%= form_for @person, url: people_path do |f|%>
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  <%= submit_tag %>
+
+<% end %>
+
+<h3>Con form_for corto</h3>
+<%= form_for @person do |f|%>
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  <ul>
+    <%= f.fields_for :addresses do |addresses_form| %>
+      <li>
+        <%= addresses_form.label :city %>
+        <%= addresses_form.text_field :city %>
+
+        <%= addresses_form.label :street %>
+        <%= addresses_form.text_field :street %>
+      </li>
+    <% end %>
+  </ul>
+  <%= submit_tag %>
+<% end %>
