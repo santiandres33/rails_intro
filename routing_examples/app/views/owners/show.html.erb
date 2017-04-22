@@ -1,0 +1,21 @@
+<h1>Hola soy <%= @owner.name %></h1>
+
+<h3>Estos son mis perritos</h3>
+
+
+<!-- Sin Showllow nesting -->
+<%#= begin %>
+<ul>
+  <% @owner.dogs.each do |dog| %>
+    <li><%= link_to dog.name, dog_path(dog) %></li>
+  <% end %>
+</ul>
+
+
+<h4>Crear nuevo perrito para mi!</h4>
+
+<%= form_for [@owner, @owner.dogs.new] do |f| %>
+  Nombre: <%= f.text_field :name %>
+  Raza: <%= f.text_field :breed %>
+  <%= f.submit "Crear Perrito" %>
+<% end %>
