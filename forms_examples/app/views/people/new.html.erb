@@ -1,12 +1,12 @@
 <h1>Hola crea una persona</h1>
 
 
-<h3>Con form tag</h3>
+<!-- <h3>Con form tag</h3>
 <%= form_tag '/people' do %>
   Name: <%= text_field(:person, :name) %>
   Email: <%= text_field(:person, :email) %>
   <%= submit_tag %>
-<% end %>
+<% end %> -->
 
 <h3>Con form_for</h3>
 <%= form_for @person, url: people_path do |f|%>
