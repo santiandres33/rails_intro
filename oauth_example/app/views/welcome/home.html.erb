@@ -1,0 +1,15 @@
+<h1>Holaaa</h1>
+
+<% if current_user %>
+  <a href="/logout">Logout</a>
+<% else %>
+  <a href="/auth/github">Login with gthub</a>
+<% end %>
+
+<% if current_user %>
+  <ul>
+    <% @repos.each do |repo| %>
+      <li><%= repo %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,7 @@
+<ul>
+  <% @songs.each do |song| %>
+    <li><%= link_to song.title, show_song_path(song), {class: 'song', id: song.id} %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Crea un song', new_song_path %>

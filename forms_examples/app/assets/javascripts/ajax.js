@@ -12,7 +12,6 @@ const people = {
     console.log('error', arguments)
   },
   filterPeople: function(event, response, status, xhr) {
-    debugger
     console.log('success', arguments)
   }
 }
