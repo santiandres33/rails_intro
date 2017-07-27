@@ -27,16 +27,18 @@ Rails.application.routes.draw do
 
   # Nested resources
   # Tarea http://weblog.jamisbuck.org/2007/2/5/nesting-resources
-  resources :owners do
-    resources :dogs
-  end
+  # resources :owners do
+  #   resources :dogs
+  # end
 
   # Shallow nesting
-  resources :owners do
-    resources :dogs, only: [:index, :new, :create]
-  end
-  #onwer_id
-  resources :dogs, only: [:show, :edit, :update, :destroy]
+  # resources :owners do
+  #   resources :dogs, only: [:index, :new, :create]
+  # end
+
+
+  # #onwer_id
+  # resources :dogs, only: [:show, :edit, :update, :destroy]
 
   # Shallow nesting atajo
   resources :owners do
@@ -47,13 +49,11 @@ Rails.application.routes.draw do
   resources :photos do
     member do
       get 'preview'
-
     end
     # get 'preview', on: :member
     collection do
       get 'search'
     end
-
     # get 'search', on: :collection
   end
 

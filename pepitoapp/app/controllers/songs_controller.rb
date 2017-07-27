@@ -12,7 +12,7 @@ class SongsController < ApplicationController
   def create
     song = Song.new(song_params)
     if song.save
-      redirect_to show_song_path(song)
+      redirect_to artist_song_path(song.artist, song)
     else
       render :new
     end
@@ -25,13 +25,14 @@ class SongsController < ApplicationController
   end
 
   def new
-    @song = Song.new
+    @artist = Artist.find(params[:artist_id])
+    @song = @artist.songs.new
   end
 
   private
 
     def song_params
-      params.require(:song).permit(:title, :artist, :genre)
+      params.require(:song).permit(:title, :genre).merge(artist_id: params[:artist_id])
     end
 
 end
