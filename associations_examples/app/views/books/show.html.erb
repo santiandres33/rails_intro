@@ -1,16 +1,27 @@
-<h1><%= @book.name %></h1>
+<div class="row">
+  <div class="col-md-6 col-xs-12">
+    <h1><%= @book.name %></h1>
+  </div>
+  <div class="col-md-6 col-xs-12">
+    <h1>Es muy chevere</h1>
+  </div>
+</div>
 
 <h3>Los capitulos de este libro son:</h3>
 
 <!-- Que es el problema de query N+1 -->
-<ul>
-  <% @book.chapters.each do |chapter| %>
-    <li><%= chapter.name %></li>
-    <p>Con la oracion de tamaño</p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
     <ul>
-      <% chapter.sentences.each do |sentence| %>
-        <li><%= sentence.word_count %></li>
+      <% @book.chapters.each do |chapter| %>
+        <li><%= chapter.name %></li>
+        <p>Con la oracion de tamaño</p>
+        <ul>
+          <% chapter.sentences.each do |sentence| %>
+            <li><%= sentence.word_count %></li>
+          <% end %>
+        </ul>
       <% end %>
     </ul>
-  <% end %>
-</ul>
+  </div>
+</div>
