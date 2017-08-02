@@ -4,10 +4,10 @@ one:
   name: MyString
   number: 1
   preview_url: MyString
-  album_id: 1
+  album_id: MyString
 
 two:
   name: MyString
   number: 1
   preview_url: MyString
-  album_id: 1
+  album_id: MyString
