@@ -1,5 +1,7 @@
 {
   "name": "associations_examples",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }

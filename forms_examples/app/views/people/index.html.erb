@@ -5,7 +5,7 @@
 </ul>
 
 
-<%= form_tag({controller: "people", action: "index"}, method: "get", remote: true, id: 'buscar', data: {type: :json}) do %>
+<%= form_tag({controller: "people", action: "index"}, method: "get", remote: true, id: 'buscar') do %>
   <%= label_tag :q, 'Nombre personaje' %> <br>
   <%= text_field_tag :q, nil, placeholder: 'Busca tu personaje aca' %>
   <%= submit_tag :buscar %>

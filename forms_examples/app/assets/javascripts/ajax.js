@@ -18,6 +18,6 @@ const people = {
 
 
 
-$(document).ready(function() {
-  people.init()
-})
+// $(document).ready(function() {
+//   people.init()
+// })
